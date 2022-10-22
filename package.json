@@ -1,6 +1,6 @@
 {
   "name": "bpmn-js-freeicon",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "A bpmn 2.0 toolkit and web modeler",
   "license": "SEE LICENSE IN LICENSE",
   "repository": {
@@ -17,6 +17,16 @@
     "modeling",
     "process modeling"
   ],
+  "scripts": {
+    "all": "run-s lint test distro test:distro",
+    "lint": "eslint .",
+    "dev": "npm test -- --auto-watch --no-single-run",
+    "test": "karma start test/config/karma.unit.js",
+    "distro": "node tasks/build-distro.js",
+    "collect-translations": "COLLECT_TRANSLATIONS=1 npm test",
+    "test:distro": "node tasks/test-distro.js",
+    "postversion": "run-s distro test:distro"
+  },
   "author": {
     "name": "SingleJoy",
     "url": "https://github.com/SingleJoy"
@@ -88,17 +98,7 @@
     "webpack": "^4.44.2"
   },
   "homepage": "https://github.com/SingleJoy#readme",
-  "scripts": {
-    "all": "run-s lint test distro test:distro",
-    "collect-translations": "COLLECT_TRANSLATIONS=1 npm test",
 
-    "dev": "npm test -- --auto-watch --no-single-run",
-    "distro": "node tasks/build-distro.js",
-    "lint": "eslint .",
-    "postversion": "run-s distro test:distro",
-    "test": "karma start test/config/karma.unit.js",
-    "test:distro": "node tasks/test-distro.js"
-  },
   "sideEffects": [
     "*.css"
   ]
