@@ -8,14 +8,6 @@
     "url": "git+https://github.com/SingleJoy/bpmn-js-freeicon.git"
   },
   "main": "index.js",
-  "files": [
-    "dist",
-    "lib",
-    "test/util",
-    "test/helper",
-    "test/matchers",
-    "!.eslintrc"
-  ],
   "keywords": [
     "bpmn",
     "bpmn-js",
@@ -28,16 +20,12 @@
   "scripts": {
     "all": "run-s lint test distro test:distro",
     "lint": "eslint .",
-    "start": "cross-env SINGLE_START=modeler npm run dev",
-    "start:viewer": "cross-env SINGLE_START=viewer npm run dev",
-    "start:navigated-viewer": "cross-env SINGLE_START=navigated-viewer npm run dev",
     "dev": "npm test -- --auto-watch --no-single-run",
     "test": "karma start test/config/karma.unit.js",
     "distro": "node tasks/build-distro.js",
-    "collect-translations": "cross-env COLLECT_TRANSLATIONS=1 npm test",
+    "collect-translations": "COLLECT_TRANSLATIONS=1 npm test",
     "test:distro": "node tasks/test-distro.js",
-    "postversion": "run-s distro test:distro",
-    "prepare": "run-s distro"
+    "postversion": "run-s distro test:distro"
   },
   "author": {
     "name": "SingleJoy",
