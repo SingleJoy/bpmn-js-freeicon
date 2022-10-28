@@ -1,6 +1,6 @@
 {
   "name": "bpmn-js-freeicon",
-  "version": "1.0.8",
+  "version": "1.1.0",
   "description": "A bpmn 2.0 toolkit and web modeler",
   "license": "SEE LICENSE IN LICENSE",
   "repository": {
@@ -44,7 +44,7 @@
   "dependencies": {
     "bpmn-moddle": "^7.0.4",
     "css.escape": "^1.5.1",
-    "diagram-js": "^6.8.2",
+    "diagram-js-freeicon": "^1.0.0",
     "diagram-js-direct-editing": "^1.6.1",
     "ids": "^1.0.0",
     "inherits": "^2.0.4",
